@@ -16,20 +16,16 @@ export const CryptoPage = () => {
 
 
     useEffect(() => {
-        /*  setIsLoading(true);
-         fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
-             .then(res => res.json())
-             .then(data => {
-                 setDataCoins(data);
-                 setIsLoading(false)
-                 console.log(data)
-                 localStorage.setItem('crypto', JSON.stringify(data));
-             })
-             .catch(error => {
-                 console.log(error)
-             }) */
-        setDataCoins(JSON.parse(localStorage.getItem('crypto')));
-        console.log(JSON.parse(localStorage.getItem('crypto')))
+        setIsLoading(true);
+        fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
+            .then(res => res.json())
+            .then(data => {
+                setDataCoins(data);
+                setIsLoading(false)
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }, [])
 
 
@@ -42,7 +38,6 @@ export const CryptoPage = () => {
     })
 
     const handleOpenModal = (e) => {
-        console.log(e)
         setCurrentCrypto(e);
         setModalOpen(true);
     };
