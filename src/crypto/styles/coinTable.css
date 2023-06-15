@@ -47,3 +47,24 @@
   tr:hover{
     background-color: #303030;
   }
+
+
+  @media screen and (max-width:560px) {
+    #table__market{
+      display: none;
+    }
+
+    #table__market--td{
+      display: none;
+    }
+
+    th, td {
+      padding: 5px;
+      font-size: 0.65rem;
+    }
+    
+    .table__img{
+      width: 30px;
+    }
+
+  }
