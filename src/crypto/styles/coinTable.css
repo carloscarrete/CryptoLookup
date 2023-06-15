@@ -37,3 +37,13 @@
   .cryptoSearch__title{
     font-size: 3rem;
   }
+
+  tr{
+    cursor: pointer;
+    transition: 0.3s;
+
+  }
+
+  tr:hover{
+    background-color: #303030;
+  }

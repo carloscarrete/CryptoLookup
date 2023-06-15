@@ -12,6 +12,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  
 }
 
 a {
@@ -82,3 +83,4 @@ input {
   border: 1px solid #ccc;
   margin-bottom: 30px;
 }
+

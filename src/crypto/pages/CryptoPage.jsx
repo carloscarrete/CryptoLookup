@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/coinTable.css'
+import '../styles/modal.css'
+
 
 export const CryptoPage = () => {
 
     const [dataCoins, setDataCoins] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [searchCoin, setSearchCoin] = useState('');
+    const [modalOpen, setModalOpen] = useState(false);
+
     useEffect(() => {
         /*  setIsLoading(true);
          fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
@@ -31,6 +35,14 @@ export const CryptoPage = () => {
     const filteredCoins = dataCoins.filter((coins) => {
         return coins.name.toLowerCase().includes(searchCoin.toLowerCase());
     })
+
+    const handleOpenModal = () => {
+        setModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setModalOpen(false);
+    };
 
     return (
         <>
@@ -72,7 +84,7 @@ export const CryptoPage = () => {
                         <tbody>
                             {
                                 filteredCoins.map((coins) => (
-                                    <tr key={coins.id}>
+                                    <tr key={coins.id} onClick={handleOpenModal}>
                                         <td>
                                             <img className='table__img' src={coins.image} alt={coins.name} />
                                         </td>
@@ -95,6 +107,15 @@ export const CryptoPage = () => {
                 </div>
             }
 
+            {modalOpen && (
+                    <div className="modal-container">
+                        <div className="modal-content">
+                            <h2>Modal</h2>
+                            <p>Contenido del modal...</p>
+                            <button onClick={handleCloseModal}>Cerrar Modal</button>
+                        </div>
+                    </div>
+            )}
         </>
     )
 }
