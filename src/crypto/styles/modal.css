@@ -18,12 +18,19 @@
   background-color: #272727;
   padding: 20px;
   border-radius: 15px;
-  width: 25%;
+  width: 35%;
 }
 
 .modal-img {
-  width: 30%;
+  width: 20%;
   height: 30%;
+}
+
+.model-chart {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .modal-pre-info {
@@ -42,7 +49,7 @@
   font-weight: bold;
 }
 
-h5{
+h5 {
   font-size: .75rem;
 }
 
@@ -53,7 +60,7 @@ h5{
     width: 70%;
   }
 
-  h5{
+  h5 {
     font-size: .65rem;
   }
 }
@@ -65,7 +72,7 @@ h5{
     width: 70%;
   }
 
-  h5{
+  h5 {
     font-size: .70rem;
   }
 }
